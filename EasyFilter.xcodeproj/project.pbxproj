@@ -44,6 +44,7 @@
 		637E2FAD248EC816006AD492 /* TinderCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E2FA9248EC816006AD492 /* TinderCardFooterView.swift */; };
 		637E2FAE248EC816006AD492 /* TinderCardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E2FAA248EC816006AD492 /* TinderCardOverlay.swift */; };
 		63F302D5248ED13800F4C29E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F302D4248ED13800F4C29E /* UIView+Extensions.swift */; };
+		63F480D92490248D00FF3DE3 /* GeneticAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F480D82490248D00FF3DE3 /* GeneticAlgorithm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +87,7 @@
 		637E2FA9248EC816006AD492 /* TinderCardFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderCardFooterView.swift; sourceTree = "<group>"; };
 		637E2FAA248EC816006AD492 /* TinderCardOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderCardOverlay.swift; sourceTree = "<group>"; };
 		63F302D4248ED13800F4C29E /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		63F480D82490248D00FF3DE3 /* GeneticAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneticAlgorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				6358681A248FD65F001EF401 /* Filter.swift */,
+				63F480D82490248D00FF3DE3 /* GeneticAlgorithm.swift */,
 			);
 			path = Modal;
 			sourceTree = "<group>";
@@ -319,6 +322,7 @@
 				635FC986248EBDFE00EBBDE7 /* SceneDelegate.swift in Sources */,
 				635FC9C4248EC2E900EBBDE7 /* SwipeCardStackDelegate.swift in Sources */,
 				635FC9BF248EC2E900EBBDE7 /* SwipeCardStackDataSource.swift in Sources */,
+				63F480D92490248D00FF3DE3 /* GeneticAlgorithm.swift in Sources */,
 				635FC9C2248EC2E900EBBDE7 /* SwipeCardStack.swift in Sources */,
 				63586818248FBD49001EF401 /* UIImage+Extensions.swift in Sources */,
 				635FC9C6248EC2E900EBBDE7 /* CardStackStateManager.swift in Sources */,
@@ -479,7 +483,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-Onone -Xfrontend -warn-long-function-bodies=100 -Xfrontend -warn-long-expression-type-checking=100";
+				OTHER_SWIFT_FLAGS = "-Onone -Xfrontend -warn-long-function-bodies=150 -Xfrontend -warn-long-expression-type-checking=150";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chillxcode.EasyFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

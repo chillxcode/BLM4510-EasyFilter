@@ -54,9 +54,6 @@ class TinderCardOverlay: UIView {
     leftTextView.topAnchor.constraint(equalTo: self.topAnchor, constant: 30).isActive = true
     leftTextView.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -14).isActive = true
     
-//    leftTextView.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor, constant: 100.0).isActive = true
-//    leftTextView.trailingAnchor.constraint(equalTo: rightAnchor, constant: 14.0).isActive = true
-    
 //    leftTextView.anchor(top: topAnchor,
 //                        right: rightAnchor,
 //                        paddingTop: 30,
@@ -73,8 +70,6 @@ class TinderCardOverlay: UIView {
     upTextView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -20).isActive = true
     upTextView.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: 0).isActive = true
     
-//    upTextView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 20.0).isActive = true
-    
     //    upTextView.anchor(bottom: bottomAnchor, paddingBottom: 20)
   }
 
@@ -87,9 +82,6 @@ class TinderCardOverlay: UIView {
     
     rightTextView.topAnchor.constraint(equalTo: self.topAnchor, constant: 26).isActive = true
     rightTextView.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 14).isActive = true
-    
-//    rightTextView.topAnchor.constraint(equalTo: topAnchor, constant: 26.0).isActive = true
-//    rightTextView.leadingAnchor.constraint(equalTo: leftAnchor, constant: 14.0).isActive = true
 
 //    rightTextView.anchor(top: topAnchor,
 //                         left: leftAnchor,
@@ -122,11 +114,6 @@ private class TinderCardOverlayLabelView: UIView {
     titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 8).isActive = true
     titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0).isActive = true
     titleLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: 3).isActive = true
-    
-//    titleLabel.topAnchor.constraint(equalTo: self.safeAreaLayoutGuide.topAnchor).isActive = true
-//    titleLabel.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leftAnchor).isActive = true
-//    titleLabel.bottomAnchor.constraint(equalTo: self.safeAreaLayoutGuide.bottomAnchor).isActive = true
-//    titleLabel.trailingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.rightAnchor).isActive = true
     
 //    titleLabel.anchor(top: topAnchor,
 //                      left: leftAnchor,

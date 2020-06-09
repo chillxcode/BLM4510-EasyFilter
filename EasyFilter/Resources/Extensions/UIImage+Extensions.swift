@@ -71,14 +71,14 @@ extension UIImage {
     }
     
     func getFilteredImage(filter: Filter) -> UIImage? {
-        return self.addFilter(filter: .Gamma, value: filter.Gamma)?
-            .addFilter(filter: .ExposureAdjust, value: filter.ExposureAdjust)?
-            .addFilter(filter: .Hue, value: filter.Hue)?
-            .addFilter(filter: .Vibrance, value: filter.Vibrance)?
-            .addFilter(filter: .ColorPasterize, value: filter.ColorPasterize)?
-            .addFilter(filter: .Sepia, value: filter.Sepia)?
-            .addFilter(filter: .Vignette, value: filter.Vignette)?
-            .addFilter(filter: .SharpenLuminance, value: filter.SharpenLuminance)
+        return self.addFilter(filter: .Gamma, value: filter.gamma)?
+            .addFilter(filter: .ExposureAdjust, value: filter.exposureAdjust)?
+            .addFilter(filter: .Hue, value: filter.hue)?
+            .addFilter(filter: .Vibrance, value: filter.vibrance)?
+            .addFilter(filter: .ColorPasterize, value: filter.colorPasterize)?
+            .addFilter(filter: .Sepia, value: filter.sepia)?
+            .addFilter(filter: .Vignette, value: filter.vignette)?
+            .addFilter(filter: .SharpenLuminance, value: filter.sharpenLuminance)
     }
 
 }
