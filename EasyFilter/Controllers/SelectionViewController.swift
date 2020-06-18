@@ -15,6 +15,9 @@ class SelectionViewController: UIViewController {
     var population = [Filter]()
     var cardModels = [TinderCardModel]()
     
+    var originalImage: UIImage!
+    var image: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
@@ -22,7 +25,16 @@ class SelectionViewController: UIViewController {
         newGeneration()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.navigationBar.isHidden = false
+    }
+    
     private func setupView() {
+        self.navigationController?.navigationBar.isHidden = true
         cardStack.delegate = self
         cardStack.dataSource = self
         view.addSubview(cardStack)
@@ -37,10 +49,14 @@ class SelectionViewController: UIViewController {
     private func newGeneration() {
         var models = [TinderCardModel]()
         for filter in population {
-            models.append(TinderCardModel(name: "", age: 0, occupation: "", image: UIImage(named: "emre")?.getFilteredImage(filter: filter)))
+            models.append(TinderCardModel(name: "", age: 0, occupation: "", image: image.getFilteredImage(filter: filter)))
         }
         cardModels = models
         cardStack.reloadData()
+    }
+    
+    @IBAction func backTouchUpInside(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
 }

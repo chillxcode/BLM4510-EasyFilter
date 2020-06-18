@@ -9,17 +9,14 @@
 import UIKit
 
 public enum FilterType: String {
-    case Gamma = "CIGammaAdjust,inputPower"                 //Default 0.75
-    case ExposureAdjust = "CIExposureAdjust,inputEV"        //Default 0.5
+    case Gamma = "CIGammaAdjust,inputPower"
+    case ExposureAdjust = "CIExposureAdjust,inputEV"
     case Hue = "CIHueAdjust,inputAngle"
     case Vibrance = "CIVibrance,inputAmount"
-    case ColorPasterize = "CIColorPosterize,inputLevels"    //Default Value 6.0
-    case Sepia = "CISepiaTone,inputIntensity"               //Default Value 1.0
-    case Vignette = "CIVignette,inputIntensity"             //Default Value 0.0 also takes inputRadius = 1.0(DV)
-//    case GlassLozenge = "CIGlassLozenge,inputRefraction"
-//    case CMYKHalftone = "CICMYKHalftone,inputSharpness"     //Default 0.7, 0.0 da cmyk oluyo
-    case SharpenLuminance = "CISharpenLuminance,inputSharpness" //Default 0.4
-//    case Edges = "CIEdges,inputIntensity"          //Default 1.0
+    case ColorPasterize = "CIColorPosterize,inputLevels"
+    case Sepia = "CISepiaTone,inputIntensity"
+    case Vignette = "CIVignette,inputIntensity"
+    case SharpenLuminance = "CISharpenLuminance,inputSharpness"
 }
 
 public enum EffectType: String {
@@ -39,14 +36,11 @@ extension UIImage {
     
     func addEffect(effect : EffectType) -> UIImage {
         let filter = CIFilter(name: effect.rawValue)
-        // convert UIImage to CIImage and set as input
         let ciInput = CIImage(image: self)
         filter?.setValue(ciInput, forKey: "inputImage")
-        // get output CIImage, render as CGImage first to retain proper UIImage scale
         let ciOutput = filter?.outputImage
         let ciContext = CIContext()
         let cgImage = ciContext.createCGImage(ciOutput!, from: (ciOutput?.extent)!)
-        //Return the image
         return UIImage(cgImage: cgImage!)
     }
     
@@ -81,4 +75,18 @@ extension UIImage {
             .addFilter(filter: .SharpenLuminance, value: filter.sharpenLuminance)
     }
 
+    func aspectFittedToMaxLengthData(maxLength: CGFloat, compressionQuality: CGFloat) -> Data {
+        let scale = maxLength / max(self.size.height, self.size.width)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = scale
+        let renderer = UIGraphicsImageRenderer(size: self.size, format: format)
+        return renderer.jpegData(withCompressionQuality: compressionQuality) { context in
+            self.draw(in: CGRect(origin: .zero, size: self.size))
+        }
+    }
+    func aspectFittedToMaxLengthImage(maxLength: CGFloat, compressionQuality: CGFloat) -> UIImage? {
+        let newImageData = aspectFittedToMaxLengthData(maxLength: maxLength, compressionQuality: compressionQuality)
+        return UIImage(data: newImageData)
+    }
+    
 }

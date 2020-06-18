@@ -9,9 +9,9 @@
 import UIKit
 
 public class GeneticAlgorithm {
-    private let DNA_SIZE = 8
-    private let POP_SIZE = 6
-    private let MUTATION_CHANCE = 10
+    private let DNA_SIZE = 8            //Filter Count
+    private let POP_SIZE = 6            //Card Size
+    private let MUTATION_CHANCE = 10    //10 in 1
     
     func randomPopulation() -> [Filter] {
         var population = [Filter]()
@@ -43,21 +43,21 @@ public class GeneticAlgorithm {
             if rand == 1 {
                 switch i {
                 case 0:
-                    outputDna[0] = Float.random(in: 0.4..<5.0)
+                    outputDna[0] = Float.random(in: 0.5..<1.5)
                 case 1:
-                    outputDna[1] = Float.random(in: -4.0..<1.5)
+                    outputDna[1] = Float.random(in: -3.0..<1.5)
                 case 2:
-                    outputDna[2] = Float.random(in: -10.0..<10.0)
+                    outputDna[2] = Float.random(in: -1.0..<1.0)
                 case 3:
                     outputDna[3] = Float.random(in: 0.0..<10.0)
                 case 4:
-                    outputDna[4] = Float.random(in: 10.0..<100.0)
+                    outputDna[4] = Float.random(in: 15.0..<100.0)
                 case 5:
-                    outputDna[5] = Float.random(in: 0.0..<0.5)
+                    outputDna[5] = Float.random(in: -0.5..<0.5)
                 case 6:
-                    outputDna[6] = Float.random(in: -1.0..<4.0)
+                    outputDna[6] = Float.random(in: -1.0..<3.5)
                 case 7:
-                    outputDna[7] = Float.random(in: -1.0..<5.0)
+                    outputDna[7] = Float.random(in: -0.4..<0.4)
                 default:
                     print("MUTATION DEFAULT CASE")
                 }

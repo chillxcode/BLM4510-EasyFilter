@@ -12,7 +12,6 @@
 		6358681B248FD65F001EF401 /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6358681A248FD65F001EF401 /* Filter.swift */; };
 		635FC984248EBDFE00EBBDE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FC983248EBDFE00EBBDE7 /* AppDelegate.swift */; };
 		635FC986248EBDFE00EBBDE7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FC985248EBDFE00EBBDE7 /* SceneDelegate.swift */; };
-		635FC988248EBDFE00EBBDE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 635FC987248EBDFE00EBBDE7 /* ViewController.swift */; };
 		635FC98B248EBDFE00EBBDE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635FC989248EBDFE00EBBDE7 /* Main.storyboard */; };
 		635FC98D248EBE0400EBBDE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 635FC98C248EBE0400EBBDE7 /* Assets.xcassets */; };
 		635FC990248EBE0400EBBDE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 635FC98E248EBE0400EBBDE7 /* LaunchScreen.storyboard */; };
@@ -43,6 +42,8 @@
 		637E2FAC248EC816006AD492 /* TinderCardModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E2FA8248EC816006AD492 /* TinderCardModel.swift */; };
 		637E2FAD248EC816006AD492 /* TinderCardFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E2FA9248EC816006AD492 /* TinderCardFooterView.swift */; };
 		637E2FAE248EC816006AD492 /* TinderCardOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 637E2FAA248EC816006AD492 /* TinderCardOverlay.swift */; };
+		63ECFEBC249C0FCB00F2A05B /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ECFEBB249C0FCB00F2A05B /* CardView.swift */; };
+		63ECFEBE249C1AAB00F2A05B /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63ECFEBD249C1AAB00F2A05B /* HomeViewController.swift */; };
 		63F302D5248ED13800F4C29E /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F302D4248ED13800F4C29E /* UIView+Extensions.swift */; };
 		63F480D92490248D00FF3DE3 /* GeneticAlgorithm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F480D82490248D00FF3DE3 /* GeneticAlgorithm.swift */; };
 /* End PBXBuildFile section */
@@ -54,7 +55,6 @@
 		635FC980248EBDFE00EBBDE7 /* EasyFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EasyFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		635FC983248EBDFE00EBBDE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		635FC985248EBDFE00EBBDE7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		635FC987248EBDFE00EBBDE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		635FC98A248EBDFE00EBBDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		635FC98C248EBE0400EBBDE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		635FC98F248EBE0400EBBDE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,6 +86,8 @@
 		637E2FA8248EC816006AD492 /* TinderCardModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderCardModel.swift; sourceTree = "<group>"; };
 		637E2FA9248EC816006AD492 /* TinderCardFooterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderCardFooterView.swift; sourceTree = "<group>"; };
 		637E2FAA248EC816006AD492 /* TinderCardOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TinderCardOverlay.swift; sourceTree = "<group>"; };
+		63ECFEBB249C0FCB00F2A05B /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		63ECFEBD249C1AAB00F2A05B /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		63F302D4248ED13800F4C29E /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		63F480D82490248D00FF3DE3 /* GeneticAlgorithm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneticAlgorithm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -146,8 +148,8 @@
 		635FC999248EC22400EBBDE7 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				635FC987248EBDFE00EBBDE7 /* ViewController.swift */,
 				63586815248FB97E001EF401 /* SelectionViewController.swift */,
+				63ECFEBD249C1AAB00F2A05B /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -212,6 +214,7 @@
 				635FC9B6248EC2E900EBBDE7 /* CGPoint+Extensions.swift */,
 				635FC9B7248EC2E900EBBDE7 /* TapGestureRecognizer.swift */,
 				63586817248FBD49001EF401 /* UIImage+Extensions.swift */,
+				63ECFEBB249C0FCB00F2A05B /* CardView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,9 +305,9 @@
 				635FC9C7248EC2E900EBBDE7 /* SwipeDirection.swift in Sources */,
 				635FC9CE248EC2E900EBBDE7 /* TapGestureRecognizer.swift in Sources */,
 				635FC9BD248EC2E900EBBDE7 /* SwipeCardDelegate.swift in Sources */,
-				635FC988248EBDFE00EBBDE7 /* ViewController.swift in Sources */,
 				637E2FAE248EC816006AD492 /* TinderCardOverlay.swift in Sources */,
 				635FC984248EBDFE00EBBDE7 /* AppDelegate.swift in Sources */,
+				63ECFEBE249C1AAB00F2A05B /* HomeViewController.swift in Sources */,
 				637E2FAC248EC816006AD492 /* TinderCardModel.swift in Sources */,
 				635FC9C5248EC2E900EBBDE7 /* CardStackLayoutProvider.swift in Sources */,
 				635FC9BC248EC2E900EBBDE7 /* CardAnimator.swift in Sources */,
@@ -332,6 +335,7 @@
 				63586816248FB97E001EF401 /* SelectionViewController.swift in Sources */,
 				635FC9CB248EC2E900EBBDE7 /* PanGestureRecognizer.swift in Sources */,
 				6358681B248FD65F001EF401 /* Filter.swift in Sources */,
+				63ECFEBC249C0FCB00F2A05B /* CardView.swift in Sources */,
 				635FC9B9248EC2E900EBBDE7 /* CardAnimationOptions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
