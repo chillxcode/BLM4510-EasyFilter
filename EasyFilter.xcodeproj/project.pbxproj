@@ -435,15 +435,15 @@
 		635FC982248EBDFE00EBBDE7 /* EasyFilter */ = {
 			isa = PBXGroup;
 			children = (
+				635FC983248EBDFE00EBBDE7 /* AppDelegate.swift */,
+				635FC98C248EBE0400EBBDE7 /* Assets.xcassets */,
+				635FC999248EC22400EBBDE7 /* Controllers */,
+				635FC991248EBE0400EBBDE7 /* Info.plist */,
+				635FC98E248EBE0400EBBDE7 /* LaunchScreen.storyboard */,
+				635FC989248EBDFE00EBBDE7 /* Main.storyboard */,
 				63586819248FD64D001EF401 /* Modal */,
 				635FC99A248EC23900EBBDE7 /* Resources */,
-				635FC999248EC22400EBBDE7 /* Controllers */,
-				635FC983248EBDFE00EBBDE7 /* AppDelegate.swift */,
 				635FC985248EBDFE00EBBDE7 /* SceneDelegate.swift */,
-				635FC989248EBDFE00EBBDE7 /* Main.storyboard */,
-				635FC98C248EBE0400EBBDE7 /* Assets.xcassets */,
-				635FC98E248EBE0400EBBDE7 /* LaunchScreen.storyboard */,
-				635FC991248EBE0400EBBDE7 /* Info.plist */,
 			);
 			path = EasyFilter;
 			sourceTree = "<group>";
@@ -463,7 +463,6 @@
 				63382435249CBC4C0050A1AA /* CLImageEditor */,
 				63F1AA58249C328C00286BCA /* Views */,
 				635FC9B0248EC2E900EBBDE7 /* Extensions */,
-				635FC99D248EC2E900EBBDE7 /* Shuffle */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -511,6 +510,7 @@
 		635FC9B0248EC2E900EBBDE7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				635FC99D248EC2E900EBBDE7 /* Shuffle */,
 				63F302D4248ED13800F4C29E /* UIView+Extensions.swift */,
 				635FC9B1248EC2E900EBBDE7 /* Array+Extensions.swift */,
 				635FC9B2248EC2E900EBBDE7 /* CGVector+Extensions.swift */,
@@ -833,7 +833,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				OTHER_SWIFT_FLAGS = "-Onone -Xfrontend -warn-long-function-bodies=150 -Xfrontend -warn-long-expression-type-checking=150";
+				OTHER_SWIFT_FLAGS = "-Onone -Xfrontend -warn-long-function-bodies=200 -Xfrontend -warn-long-expression-type-checking=200";
 				PRODUCT_BUNDLE_IDENTIFIER = com.chillxcode.EasyFilter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = EasyFilter/Resources/CLImageEditor/CLImageEditor.h;

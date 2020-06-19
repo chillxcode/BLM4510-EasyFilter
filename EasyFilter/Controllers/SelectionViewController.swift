@@ -12,14 +12,14 @@ class SelectionViewController: UIViewController {
     
     @IBOutlet weak var saveCardView: CardView!
     
-    let cardStack = SwipeCardStack()
-    var population = [Filter]()
-    var cardModels = [TinderCardModel]()
+    let cardStack = SwipeCardStack()        //Card Stack Class
+    var population = [Filter]()             //Filters
+    var cardModels = [TinderCardModel]()    //Card Stack Data Source
     
     var originalImage: UIImage!
-    var image: UIImage!
+    var image: UIImage!                     //Size reduced image
     
-    var filterIndex: Int = 0
+    var filterIndex: Int = 0                //Selected image index variable
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,6 @@ class SelectionViewController: UIViewController {
     }
     
     private func setupView() {
-        self.navigationController?.navigationBar.isHidden = true
         cardStack.delegate = self
         cardStack.dataSource = self
         view.addSubview(cardStack)
@@ -86,24 +85,8 @@ class SelectionViewController: UIViewController {
     
 }
 
-extension SelectionViewController {
-    @objc
-    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        if let error = error {
-            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
-        } else {
-            let ac = UIAlertController(title: "Saved!", message: "Image has been saved to your photos.", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .default))
-            present(ac, animated: true)
-        }
-    }
-}
-
 extension SelectionViewController: SwipeCardStackDelegate {
     func didSwipeAllCards(_ cardStack: SwipeCardStack) {
-        print("Swiped all cards!")
         population = GeneticAlgorithm().calculate(items: population)
         newGeneration()
     }
@@ -119,7 +102,6 @@ extension SelectionViewController: SwipeCardStackDelegate {
             print("Default Swipe Direction")
         }
         filterIndex = (filterIndex + 1) % 6
-        print("INDEXX: \(filterIndex)")
     }
 }
 
