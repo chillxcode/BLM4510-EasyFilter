@@ -158,7 +158,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jM-Ss-KoC">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
                                         <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
-                                        <state key="normal" title="SAVE">
+                                        <state key="normal" title="SELECT">
                                             <color key="titleColor" name="TextColor"/>
                                         </state>
                                         <connections>

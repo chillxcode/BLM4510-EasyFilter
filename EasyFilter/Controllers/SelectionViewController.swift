@@ -19,7 +19,6 @@ class SelectionViewController: UIViewController {
     var originalImage: UIImage!
     var image: UIImage!
     
-    var alert: UIAlertController!
     var filterIndex: Int = 0
     
     override func viewDidLoad() {
@@ -38,7 +37,6 @@ class SelectionViewController: UIViewController {
     }
     
     private func setupView() {
-        setupAlert(message: "Saving...")
         self.navigationController?.navigationBar.isHidden = true
         cardStack.delegate = self
         cardStack.dataSource = self
@@ -60,17 +58,6 @@ class SelectionViewController: UIViewController {
         cardStack.reloadData()
     }
     
-    func setupAlert(message: String) {
-        alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        
-        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
-        loadingIndicator.hidesWhenStopped = true
-        loadingIndicator.style = UIActivityIndicatorView.Style.gray
-        loadingIndicator.startAnimating();
-        
-        alert.view.addSubview(loadingIndicator)
-    }
-    
     @IBAction func saveTouchDown(_ sender: UIButton) {
         saveCardView.animateButtonDown()
     }
@@ -81,15 +68,16 @@ class SelectionViewController: UIViewController {
     
     @IBAction func saveTouchUpInside(_ sender: UIButton) {
         saveCardView.animateButtonUp()
-        present(alert, animated: true, completion: nil)
         guard let imageToSave = originalImage.getFilteredImage(filter: population[filterIndex]) else {
-            alert.dismiss(animated: true, completion: nil)
             let ac = UIAlertController(title: "Save error", message: "Error in applying filter...", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
             return
         }
-        UIImageWriteToSavedPhotosAlbum(imageToSave, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        let editor = CLImageEditor(image: imageToSave, delegate: self)
+        editor?.beginAppearanceTransition(true, animated: true)
+        editor?.modalPresentationStyle = .fullScreen
+        self.present(editor!, animated: true, completion: nil)
     }
     
     @IBAction func backTouchUpInside(_ sender: UIButton) {
@@ -101,7 +89,6 @@ class SelectionViewController: UIViewController {
 extension SelectionViewController {
     @objc
     func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
-        alert.dismiss(animated: true, completion: nil)
         if let error = error {
             let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
@@ -155,4 +142,11 @@ extension SelectionViewController: SwipeCardStackDataSource {
         return cardModels.count
     }
     
+}
+
+extension SelectionViewController: CLImageEditorDelegate {
+    func imageEditor(_ editor: CLImageEditor!, didFinishEditingWith image: UIImage!) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+        editor.dismiss(animated: true, completion: nil)
+    }
 }
