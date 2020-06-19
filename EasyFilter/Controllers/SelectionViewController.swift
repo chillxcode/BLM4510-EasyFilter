@@ -146,7 +146,7 @@ extension SelectionViewController: SwipeCardStackDataSource {
 
 extension SelectionViewController: CLImageEditorDelegate {
     func imageEditor(_ editor: CLImageEditor!, didFinishEditingWith image: UIImage!) {
-        UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
-        editor.dismiss(animated: true, completion: nil)
+        let activityController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        editor.show(activityController, sender: nil)
     }
 }
