@@ -10,13 +10,17 @@ import UIKit
 
 class SelectionViewController: UIViewController {
     
-    let cardStack = SwipeCardStack()
+    @IBOutlet weak var saveCardView: CardView!
     
+    let cardStack = SwipeCardStack()
     var population = [Filter]()
     var cardModels = [TinderCardModel]()
     
     var originalImage: UIImage!
     var image: UIImage!
+    
+    var alert: UIAlertController!
+    var filterIndex: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +38,7 @@ class SelectionViewController: UIViewController {
     }
     
     private func setupView() {
+        setupAlert(message: "Saving...")
         self.navigationController?.navigationBar.isHidden = true
         cardStack.delegate = self
         cardStack.dataSource = self
@@ -55,10 +60,58 @@ class SelectionViewController: UIViewController {
         cardStack.reloadData()
     }
     
-    @IBAction func backTouchUpInside(_ sender: Any) {
+    func setupAlert(message: String) {
+        alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+    }
+    
+    @IBAction func saveTouchDown(_ sender: UIButton) {
+        saveCardView.animateButtonDown()
+    }
+    
+    @IBAction func saveTouchUpOutside(_ sender: UIButton) {
+        saveCardView.animateButtonUp()
+    }
+    
+    @IBAction func saveTouchUpInside(_ sender: UIButton) {
+        saveCardView.animateButtonUp()
+        present(alert, animated: true, completion: nil)
+        guard let imageToSave = originalImage.getFilteredImage(filter: population[filterIndex]) else {
+            alert.dismiss(animated: true, completion: nil)
+            let ac = UIAlertController(title: "Save error", message: "Error in applying filter...", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+            return
+        }
+        UIImageWriteToSavedPhotosAlbum(imageToSave, self, #selector(image(_:didFinishSavingWithError:contextInfo:)), nil)
+    }
+    
+    @IBAction func backTouchUpInside(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
+}
+
+extension SelectionViewController {
+    @objc
+    func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
+        alert.dismiss(animated: true, completion: nil)
+        if let error = error {
+            let ac = UIAlertController(title: "Save error", message: error.localizedDescription, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        } else {
+            let ac = UIAlertController(title: "Saved!", message: "Image has been saved to your photos.", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .default))
+            present(ac, animated: true)
+        }
+    }
 }
 
 extension SelectionViewController: SwipeCardStackDelegate {
@@ -78,7 +131,8 @@ extension SelectionViewController: SwipeCardStackDelegate {
         default:
             print("Default Swipe Direction")
         }
-        
+        filterIndex = (filterIndex + 1) % 6
+        print("INDEXX: \(filterIndex)")
     }
 }
 

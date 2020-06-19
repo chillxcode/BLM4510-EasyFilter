@@ -157,6 +157,7 @@
 		635FC99A248EC23900EBBDE7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				63F1AA58249C328C00286BCA /* Views */,
 				635FC9B0248EC2E900EBBDE7 /* Extensions */,
 				635FC99D248EC2E900EBBDE7 /* Shuffle */,
 			);
@@ -214,7 +215,6 @@
 				635FC9B6248EC2E900EBBDE7 /* CGPoint+Extensions.swift */,
 				635FC9B7248EC2E900EBBDE7 /* TapGestureRecognizer.swift */,
 				63586817248FBD49001EF401 /* UIImage+Extensions.swift */,
-				63ECFEBB249C0FCB00F2A05B /* CardView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -228,6 +228,14 @@
 				637E2FAA248EC816006AD492 /* TinderCardOverlay.swift */,
 			);
 			path = TinderCard;
+			sourceTree = "<group>";
+		};
+		63F1AA58249C328C00286BCA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				63ECFEBB249C0FCB00F2A05B /* CardView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -37,7 +37,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="QqT-tj-Epv"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                 <color key="textColor" name="ImageColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -82,7 +82,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="22" id="9NB-ma-ZYs"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="16"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="15"/>
                                                 <color key="textColor" name="ImageColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -157,9 +157,15 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6jM-Ss-KoC">
                                         <rect key="frame" x="0.0" y="0.0" width="311" height="50"/>
-                                        <state key="normal" title="CHOOSE👊🏻">
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="16"/>
+                                        <state key="normal" title="SAVE">
                                             <color key="titleColor" name="TextColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveTouchDown:" destination="BYZ-38-t0r" eventType="touchDown" id="mM1-cL-va0"/>
+                                            <action selector="saveTouchUpInside:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EaN-qW-Wnw"/>
+                                            <action selector="saveTouchUpOutside:" destination="BYZ-38-t0r" eventType="touchUpOutside" id="MKf-Xd-pL3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="CardColor"/>
@@ -195,6 +201,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="uuv-15-Mjg"/>
                     <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="saveCardView" destination="DeT-QW-ScG" id="KI7-OF-lfO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +219,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" name="TextColor"/>
                         <textAttributes key="largeTitleTextAttributes">
-                            <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="40"/>
+                            <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="34"/>
                             <color key="textColor" name="TextColor"/>
                         </textAttributes>
                     </navigationBar>
