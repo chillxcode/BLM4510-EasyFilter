@@ -1,5 +1,5 @@
 # EasyFilter
-EasyFilter is a filter suggestion application. Filters are supposed according to the liked and disliked filters with the Genetic Algorithm.
+EasyFilter is a filter suggestion application. Filters are supposed according to the liked and disliked filters with the Genetic Algorithm. Running Version of the Application -> [Youtube]
 
   - If you have trouble with choosing a filter
   - If you waste a lot of time filtering your photos
@@ -56,17 +56,6 @@ And of course EasyFilter itself is open source with a [public repository][dill]
 
    [dill]: <https://github.com/chillxcode/BLM4510-EasyFilter>
    [Shuffle]: <https://github.com/mac-gallagher/Shuffle>
+   [Youtube]: <https://youtu.be/cdBH_2clFyk>
    [CLImageEditor]: <https://github.com/yackle/CLImageEditor>
    [CIFilter]: <https://developer.apple.com/library/archive/documentation/GraphicsImaging/Conceptual/CoreImaging/ci_intro/ci_intro.html#//apple_ref/doc/uid/TP30001185>
-   [git-repo-url]: <https://github.com/joemccann/dillinger.git>
-   [john gruber]: <http://daringfireball.net>
-   [df1]: <http://daringfireball.net/projects/markdown/>
-   [markdown-it]: <https://github.com/markdown-it/markdown-it>
-   [Ace Editor]: <http://ace.ajax.org>
-   [node.js]: <http://nodejs.org>
-   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
-   [jQuery]: <http://jquery.com>
-   [@tjholowaychuk]: <http://twitter.com/tjholowaychuk>
-   [express]: <http://expressjs.com>
-   [AngularJS]: <http://angularjs.org>
-   [Gulp]: <http://gulpjs.com>
