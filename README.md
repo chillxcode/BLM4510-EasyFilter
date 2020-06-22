@@ -1,5 +1,5 @@
 # EasyFilter
-EasyFilter is a filter suggestion application. Filters are supposed according to the liked and disliked filters with the Genetic Algorithm. Running Version of the Application -> [Youtube]
+EasyFilter is a filter suggestion application. Filters are supposed according to the liked and disliked filters with the Genetic Algorithm. Application demonstration -> [Youtube]
 
   - If you have trouble with choosing a filter
   - If you waste a lot of time filtering your photos
